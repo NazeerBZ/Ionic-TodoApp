@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-title>
+      To-Do Application
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addItem()"><ion-icon name="add-circle"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items; let i = index">
+      {{item.title}}
+      <ion-buttons end>
+        <button ion-button icon-only (click)="viewItem(item)"><ion-icon name="md-eye"></ion-icon></button>
+        <button ion-button icon-only (click)="delItem(i)"><ion-icon name="md-trash"></ion-icon></button>
+        <button ion-button icon-only (click)="updateItem(i)"><ion-icon name="add-circle"></ion-icon></button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>
